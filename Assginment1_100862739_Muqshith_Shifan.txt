@@ -1,0 +1,148 @@
+#mUQSHITH sHIFAN
+#100862739
+
+############################  Table.py ################################ 
+
+# Give each number a Variable
+num1 = 1
+num2 = 2
+num3 = 3
+num4 = 4
+num5 = 5
+num6 = 6
+
+# Prints table with calculations
+print("a\tb\ta**b")
+print(str(num1), " ", str(num2), " ", str(num1**num2))
+print(str(num2), " ", str(num3), " ", str(num2**num3))
+print(str(num3), " ", str(num4), " ", str(num3**num4))
+print(str(num4), " ", str(num5), " ", str(num4**num5))
+print(str(num5), " ", str(num6), " ", str(num5**num6))
+
+###################################################### 
+
+############################  SumOfDigits.py ################################ 
+# This section allows the program to get the sum and calculate the sum of number of digits in the number given
+def getSum(n):
+    sum = 0
+    while (n != 0):
+        sum = sum + (n % 10)
+        n = n // 10
+
+    return sum
+
+
+# loop Variable
+userNumValid = True
+
+# asks user for a number form 0-1000
+userNum = int(input("Enter a number between 0 and 10000: "))
+
+# if user enters a number outside the range the programs sets valid input to false and starts the error loop
+if userNum > 1000 or userNum < 0:
+    userNumValid = False
+
+# error loop to ask user to re-enter a number within the range
+while not userNumValid:
+
+    if userNum > 1001:
+        print("This value is higher! please enter a number form 0-1000")
+        userNum = int(input("Enter a number between 0 and 10000: "))
+
+    if userNum < 0:
+        print("This value is lower! please enter a number from 0-1000")
+        userNum = int(input("Enter a number between 0 and 10000: "))
+
+    if 10000 > userNum > 0:
+        break
+# if there is no error we store the user input into 'n'
+n = userNum
+
+# displays the sum of digits in the inputted number
+print("The sum of the digits is ", getSum(n))
+
+###################################################### 
+
+############################  NumYearsDays.py ################################ 
+# asks user for the number of minutes
+minutes = int(input("Enter the number of minutes: "))
+
+# Calculations to convert input into hours, days, and years respectfully
+hours = minutes // 60
+day = hours // 24
+years = day // 365
+remainingMinutes = (day % 365)
+
+# Displays approximate amount of years and days
+print(round(minutes), " minutes is approximately ", round(years, 1), " years and ", round(remainingMinutes), " days ")
+
+################################################################################# 
+
+############################  Health.py ################################ 
+
+# Asks user for weight in pounds and height in inches
+weight = int(input("Enter weight in pounds: "))
+height = int(input("Enter height in inches: "))
+
+# Converts pounds into Kg using the kg formula
+weightInKg = weight*0.45359237
+
+# Converts inches into meters using the meter formula
+heightInMeters = height*0.0254
+
+# Uses the BMI formula to get your BMI
+BMI = weightInKg/(heightInMeters**2)
+
+# Displays users BMI amount round to the 2nd decimal place
+print("BMI is", round(BMI, 2))
+
+################################################################################# 
+
+############################  Payroll.py ################################ 
+
+#Variables Used
+name = str(input("Enter employee's name: "))
+numHoursWorked = float(input("Enter number of hours worked in a week: "))
+hourlyPayRate = float(input("Enter hourly payrate: "))
+federalTax = float(input("Enter federal tax withholding rate: "))
+stateTax = float(input("Enter state tax withholding rate: "))
+
+print("#######################################################")
+
+#name
+print("Employee Name: ",name)
+
+#hours worked
+print("Hours Worked: ",numHoursWorked)
+
+#payrate
+print("Pay Rate: $",hourlyPayRate)
+
+#gross pay
+grossPay = numHoursWorked*hourlyPayRate
+print("Gross Pay: $",float(grossPay))
+
+print("Deductions: ")
+
+#Federal Witholding
+fedWithhold = grossPay * federalTax
+print("\tFederal Withholding (%", federalTax*100,") : $", fedWithhold)
+
+#State Tax Withholding
+stateWithhold = grossPay * stateTax
+print("\tState Withholding (%", stateTax*100,") : $", round(stateWithhold, 2))
+
+#Total Dedections
+totalDedections = fedWithhold+stateWithhold
+print("\tTotal Dedections : $", totalDedections)
+
+#Net Pay
+netPay = grossPay-totalDedections
+print("Net Pay: $", netPay)
+
+################################################################################# 
+
+
+
+
+
