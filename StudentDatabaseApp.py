@@ -1,8 +1,3 @@
-# =============================================================================
-# Arshia Mortazavinezhad -100860353
-# Muqshith Shifan -100862739
-# Yosif Iskander -100851999 (Group Leader)
-# =============================================================================
 from time import sleep
 import prettytable
 from datetime import datetime
