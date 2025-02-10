@@ -1,4 +1,3 @@
-#Muqshith Shifan 100862739
 import tkinter as tk
 import random
 
