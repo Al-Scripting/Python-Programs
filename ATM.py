@@ -1,5 +1,3 @@
-# Muqshith Shifan - ATM - Lab 4 - 2022-10-06
-# 100862739
 import time
 
 # Sets Gloabal Variables
